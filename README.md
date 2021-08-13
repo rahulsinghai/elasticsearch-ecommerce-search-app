@@ -8,8 +8,12 @@ order to demo Elasticsearch search and aggregation functionality.
 You need docker-compose and java 12 in order to run this. Just clone the
 repository and run
 
-```
-docker-compose up
+```shell
+docker-compose up -d
+docker ps -a
+docker container logs -f elasticsearch_ecommerce_search_sample
+docker container logs -f kibana_ecommerce_search_sample
+
 # open a new terminal and run
 ./gradlew run
 ```
@@ -20,6 +24,15 @@ micronaut based web application on port 8080.
 There are two URLs you can visit. First [the main
 URL](http://localhost:8080), which contains the frontend, second the
 [administrative URL](http://localhost:8080/admin.html).
+
+```shell
+docker-compose up -d
+docker-compose stop
+docker ps -a
+docker rm <containerID/containerName>
+docker images
+docker rmi -f <imageID>
+```
 
 ## Technologies used
 
